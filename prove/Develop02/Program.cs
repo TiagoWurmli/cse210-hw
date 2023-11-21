@@ -11,8 +11,15 @@ class Program
         prompt._prompts.Add("How did I see the hand of the Lord in my life today?");
         prompt._prompts.Add("What was the strongest emotion I felt today?");
         prompt._prompts.Add("If I had one thing I could do over today, what would it be?");
-    
-        Console.WriteLine(prompt.GetRamomPrompt());
+
+        //Console.WriteLine(prompt.GetRamomPrompt());
+
+        Entry entry = new Entry();
+        DateTime theCurrentTime = DateTime.Now;
+        entry._date = theCurrentTime.ToShortDateString();
+        entry._promptText = prompt.GetRamomPrompt();
+        entry._entryText = "Escrevi isso";
+        entry.Display();
 
     }
 }
