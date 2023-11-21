@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        Journal journal = new Journal();
 
         PromptGenerator prompt = new PromptGenerator();
         prompt._prompts.Add("Who was the most interesting person I interacted with today?");
@@ -18,8 +19,15 @@ class Program
         DateTime theCurrentTime = DateTime.Now;
         entry._date = theCurrentTime.ToShortDateString();
         entry._promptText = prompt.GetRamomPrompt();
-        entry._entryText = "Escrevi isso";
-        entry.Display();
+        entry._entryText = "I wrote this";
+        journal.AddEntry(entry);
+        //entry.Display();
+        DateTime theCurrentTimes = DateTime.Now;
+        entry._date = theCurrentTimes.ToShortDateString();
+        entry._promptText = prompt.GetRamomPrompt();
+        entry._entryText = "I wrote this again";
+        journal.AddEntry(entry);
+        journal.DisplayAll();
 
     }
 }
