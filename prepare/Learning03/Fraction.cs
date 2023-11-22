@@ -3,15 +3,15 @@ public class Fraction {
     private int _top;
     private int _bottom;
 
-    public void Fractoin(){
+    public Fraction(){
         _top = 1;
         _bottom = 1;
     }
-    public void Fractoin(int wholeNumber){
+    public Fraction(int wholeNumber){
         _top = wholeNumber;
         _bottom = 1;
     }
-    public void Fractoin(int top, int bottom){
+    public Fraction(int top, int bottom){
         _top = top;
         _bottom = bottom;
     }
