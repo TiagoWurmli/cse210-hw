@@ -6,9 +6,9 @@ public class Scripture {
     private List<Word> _words = new List<Word>();
 
     public Scripture(Reference reference, string text){
-
+            //Pega a referencia
             _reference = reference;
-
+            //Adiciona as palavras na lista "_words" em Word
             List<string>words = text.Split(' ').ToList();
             foreach (string word in words){
                 Word word1 = new Word(word);
@@ -16,29 +16,40 @@ public class Scripture {
             }
     }
     public void HideRandomWords(int numberToHide = 0){
-
+        //Vai esconder o numero de palavras em "numberToHide"
         for (int i = 0; i < numberToHide; i++){
-
+            //Cheka se esta tudo escondido
             bool isCompletelyHidden = IsCompletelyHidden();
+            //Se não estiver vai esconder mais um numero
             if (isCompletelyHidden == false){
-
+                //Pega uma palavra aleatoria da lista
                 Random randomGenerator = new Random();
                 int random = randomGenerator.Next(0, _words.Count);
-
+                //Se a palavra nao esta escondida vai esconder
                 if (_words[random].IsHidden() == false){
                     _words[random].Hide();
                 }
+                //Se não vai repetir o processo
                 else{
-                    i = i - 1;
+                    i--;
                 }
             }
+            //Se estiver vai encerrar o loop
             else{
                 i += numberToHide;
             }
         }
     }
     public string GetDisplayText(){
-        return"";
+
+        List<string>textList = new List<string>();
+        for (int i = 0; i < _words.Count; i++)
+        {
+            textList[i] = _words[i].GetDisplayText();
+        }
+        string textDisplay = string.Join(" ", textList);
+        string referenceDisplay = _reference.GetDisplayText();
+        return $"{referenceDisplay} {textDisplay}";
     }
     public bool IsCompletelyHidden(){
         //Cria lista de bool
