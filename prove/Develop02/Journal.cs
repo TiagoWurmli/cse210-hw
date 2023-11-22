@@ -37,7 +37,7 @@ public class Journal {
             entry._promptText = lines[i+1];
             entry._entryText = lines[i+2];
 
-            AddEntry(entry);
+            _entries.Add(entry);
             }
         }
     }
