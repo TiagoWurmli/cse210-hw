@@ -219,4 +219,28 @@ Person p1 = new Person(); // Don't pass any information to get the default value
 Person p2 = new Person("Jane", "Doe"); // pass the first and last names
 Person p3 = new Person("Mrs.", "Jane", "Doe"); // pass all three variables
 
+!Inheritance!
 
+// a regular class called Person
+public class Person{
+    public string GetName(){
+        return "Joseph";
+    }
+}
+
+// a class that inherits from Person
+public class Student : Person{
+    public string GetNumber(){
+        return "0123456789";
+    }
+}
+// the student instance automatically has the GetName() method!
+Student student = new Student();
+string name = student.GetName();
+Console.WriteLine(name);
+
+//Da pra usar base pra usar as paradas do pai na propria classe
+string number = base.GetName();
+Console.WriteLine($"Student Number: {number}");
+
+//Da pra usar "protected" ao inves de "private" pro filhos acessarem as parados dos pais, mas mais ninguem.
