@@ -56,7 +56,7 @@ public class Scripture {
         List<bool>hidden = new List<bool>();
         for (int i = 0; i < _words.Count; i++){
 
-            hidden[i] = _words[0].IsHidden();
+            hidden[i] = _words[i].IsHidden();
         }
         //Ver se é tudo true
         bool anyFalse = hidden.Any(element => element == false);

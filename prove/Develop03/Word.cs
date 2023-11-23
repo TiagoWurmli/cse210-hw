@@ -28,5 +28,4 @@ public class Word {
     public string GetDisplayText(){
         return _text;
     }
-    
 }
