@@ -14,6 +14,7 @@ public class Scripture {
                 Word word1 = new Word(word);
                 _words.Add(word1);
             }
+        Console.WriteLine(_words);
     }
     public void HideRandomWords(int numberToHide = 0){
         //Vai esconder o numero de palavras em "numberToHide"
@@ -45,7 +46,7 @@ public class Scripture {
         List<string>textList = new List<string>();
         for (int i = 0; i < _words.Count; i++)
         {
-            textList[i] = _words[i].GetDisplayText();
+            textList.Add(_words[i].GetDisplayText());
         }
         string textDisplay = string.Join(" ", textList);
         string referenceDisplay = _reference.GetDisplayText();
@@ -56,7 +57,7 @@ public class Scripture {
         List<bool>hidden = new List<bool>();
         for (int i = 0; i < _words.Count; i++){
 
-            hidden[i] = _words[i].IsHidden();
+            hidden.Add(_words[i].IsHidden());
         }
         //Ver se é tudo true
         bool anyFalse = hidden.Any(element => element == false);
