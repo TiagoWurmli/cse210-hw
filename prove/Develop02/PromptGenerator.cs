@@ -8,4 +8,4 @@ public class PromptGenerator {
         int i = randomGenerator.Next(0, _prompts.Count);
         return _prompts[i];
     }
-}
+} 
