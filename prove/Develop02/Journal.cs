@@ -25,7 +25,7 @@ public class Journal {
                 outputFile.WriteLine($"{item._entryText}");
             }
         }
-    }
+    } 
     public void LoadFromFile(string file){
 
         string[] lines = System.IO.File.ReadAllLines(file);
