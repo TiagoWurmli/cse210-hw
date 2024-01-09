@@ -1,7 +1,7 @@
 using System;
 
 class Program
-{
+{ 
     static void Main(string[] args)
     {
         Console.Write("What is your first name? ");
@@ -12,4 +12,4 @@ class Program
 
         Console.WriteLine($"Your name is {lastName}, {firstName} {lastName}.");
     }
-}
+} 

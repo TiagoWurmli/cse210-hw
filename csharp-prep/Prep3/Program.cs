@@ -19,13 +19,13 @@ class Program
             {
                 Console.WriteLine("Lower");
             }
-
+ 
             else if (number > response)
             {
                 Console.WriteLine("Higher");
             }
 
-        } while (response != number);
+        } while (response != number); 
 
         Console.WriteLine("You guessed it!");
 

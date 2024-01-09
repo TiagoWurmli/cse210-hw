@@ -32,18 +32,18 @@ class Program
         {
             gradeString = "F";
         }
-
+ 
         Console.WriteLine($"Your grade is {gradeString}.");
 
         if (gradeString == "A" || gradeString == "B" || gradeString == "C")
         {
             Console.WriteLine("You Pass!");
-        }
+        } 
 
         else
         {
             Console.WriteLine("You fail, good luck next time, you will need it!");
         }
-
+ 
     }
 }

@@ -28,13 +28,13 @@ class Program
             {
                 largestNumber = number;
             }
-        }
+        } 
 
         int listLenght = numberList.Count - 1;
         float average = ((float)sum) / listLenght;
         Console.WriteLine($"The sum is: {sum}");
         Console.WriteLine($"The average is: {average}");
         Console.WriteLine($"The largest number is: {largestNumber}");
-
+ 
     }
 }
