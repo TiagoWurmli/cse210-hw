@@ -14,12 +14,14 @@ class Program
 {
     static void Main(string[] args)
     {
+        // Cria lista
         List<int> numbers = new List<int>();
         int newNumber = 1;
         int totalSum = 0;
 
         Console.WriteLine("Enter a list of numbers, type 0 when finished.");
 
+        // Loop para adicionar numero na lista
         while (newNumber != 0)
         {
             Console.Write(" Enter number: ");
@@ -55,6 +57,7 @@ class Program
         Console.WriteLine($"The smallest positive number is: {smallestPositive}");
         Console.WriteLine("The sorted list is:");
 
+        // Ordenar lista menor para o maior numero
         numbers.Sort();
         foreach (int number in numbers)
         {
