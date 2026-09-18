@@ -31,13 +31,14 @@ public class Journal
         foreach (string line in lines)
         {
             string[] parts = line.Split("~|~");
-            
-            foreach (Entry entrys in _entrys)
-            {
-                entrys._date = parts[0];
-                entrys._entryText = parts[1];
-                entrys._promptText = parts[3];
-            }
+
+            Entry newEntry = new Entry();
+
+            newEntry._date = parts[0];
+            newEntry._entryText = parts[1];
+            newEntry._promptText = parts[2];
+
+            _entrys.Add(newEntry);
         }
     }
 }
