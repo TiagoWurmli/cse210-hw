@@ -23,9 +23,15 @@ public class Scripture
             Random randomGenerator = new Random();
             int i = randomGenerator.Next(0, _words.Count);
 
-            _words[i].Hide();
-
-            numberToHide--;
+            if (_words[i].IsHidden() == false)
+            {
+                _words[i].Hide();
+                numberToHide--;
+            }
+            else if (IsCompletelyHidden())
+            {
+                numberToHide = 0;
+            }
         }
     }
     public string GetDisplayText()
