@@ -1,3 +1,8 @@
+// Exceeds requirements:
+// I made the HideRandomWords only hide words that are not hidden
+// and a step to verify if not all of them are hidden 
+// so do not be stuck on a infinite loop
+
 using System;
 
 class Program
@@ -17,7 +22,11 @@ class Program
             Console.WriteLine("Press enter to continue or type 'quit' to finish: ");
             string answer = Console.ReadLine();
 
-            if (answer != "quit")
+            if (answer == "quit")
+            {
+                keepRunning = false;
+            }
+            else
             {
                 if (scripture.IsCompletelyHidden())
                 {
