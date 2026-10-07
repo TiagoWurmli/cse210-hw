@@ -7,10 +7,7 @@ public class BreathingActivity : Activity
     }
     public void Run()
     {
-        Console.WriteLine($"Get ready...");
-        ShowSpinner(5);
-        Console.WriteLine();
-
+        DisplayStartingMessege();
         for (int i = _duration; i > 0;)
         {
             int _breatheIn = 4;
@@ -22,13 +19,15 @@ public class BreathingActivity : Activity
                 _breatheOut = i - _breatheIn;
             }
 
-            Console.Write($"Breathe in...");
+            Console.Write("Breathe in...");
             ShowCountDown(_breatheIn);
             Console.WriteLine();
 
-            Console.Write($"Now breathe out...");
+            Console.Write("Now breathe out...");
             ShowCountDown(_breatheOut);
             Console.WriteLine("\n");
+
+            Console.Clear();
 
             i = i - _breatheIn - _breatheOut;
         }

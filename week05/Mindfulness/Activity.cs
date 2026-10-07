@@ -15,11 +15,18 @@ public class Activity
         Console.WriteLine($"{_description}\n");
         Console.WriteLine($"How long, in seconds, would you like for your session? ");
         _duration = int.Parse(Console.ReadLine());
+
+        Console.Clear();
+        Console.WriteLine("Get ready...");
+        ShowSpinner(4);
+        Console.WriteLine();
     }
     public void DisplayEndingMessege()
     {
         Console.WriteLine("Well done!!\n");
         Console.WriteLine($"You have completed another {_duration} seconds of the {_name}.\n");
+        ShowSpinner(3);
+        Console.Clear();
     }
     public void ShowSpinner(int seconds)
     {
