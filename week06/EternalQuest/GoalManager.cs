@@ -9,24 +9,63 @@ public class GoalManager
     }
     public void Start()
     {
-        
+        int answer = 0;
+        while (answer != 6)
+        {
+            DisplayPlayerInfo();
+            Console.WriteLine();
+            Console.WriteLine("Menu Options:");
+            Console.WriteLine("  1. Create New Goal");
+            Console.WriteLine("  2. List Goals");
+            Console.WriteLine("  3. Save Goals");
+            Console.WriteLine("  4. Load Goal");
+            Console.WriteLine("  5. Record Event");
+            Console.WriteLine("  6.Quit");
+            Console.Write("Select a choice from the menu: ");
+            answer = int.Parse(Console.ReadLine());
+
+            if(answer == 1)
+            {
+                CreateGoal();
+            }
+            else if(answer == 2)
+            {
+                ListGoalDetails();
+            }
+            else if(answer == 3)
+            {
+                SaveGoals();
+            }
+            else if(answer == 4)
+            {
+                LoadGoals();
+            }
+            else if(answer == 5)
+            {
+                RecordEvent();
+            }
+            else if(answer == 6)
+            {
+                Console.WriteLine("Bye!");
+            }
+            else
+            {
+                Console.WriteLine("Please select a valid option.");
+            }
+
+        }
     }
     public void DisplayPlayerInfo()
     {
-        foreach (Goal goal in _goals)
-        {
-            if (goal.IsComplete())
-            {
-                _score += goal.GetPoints();
-            }
-            Console.WriteLine("You have " + _score + " points.");
-        }
+        Console.WriteLine("You have " + _score + " points.");
     }
     public void ListGoalNames()
     {
+        int index = 1;
         foreach (Goal goal in _goals)
         {
-            Console.WriteLine(goal.GetName());
+            Console.WriteLine(index + ". " + goal.GetName());
+            index++;
         }
     }
     public void ListGoalDetails()
@@ -88,12 +127,8 @@ public class GoalManager
     public void RecordEvent()
     {
         Console.WriteLine("The goals are:");
-        int index = 1;
-        foreach (Goal goal in _goals)
-        {
-            Console.WriteLine(index + ". " + goal.GetDetailsString());
-            index++;
-        }
+        ListGoalNames();
+
         int beforeScore = _score;
         Console.Write("Which goal did you accomplish? ");
         int choice = int.Parse(Console.ReadLine());
@@ -125,7 +160,9 @@ public class GoalManager
 
         string[] lines = System.IO.File.ReadAllLines(filename);
 
-        foreach (string line in lines)
+        _score = int.Parse(lines[0]);
+
+        foreach (string line in lines.Skip(1))
         {
             string[] goalTypes = line.Split(":");
 
@@ -152,9 +189,5 @@ public class GoalManager
                 _goals.Add(new ChecklistGoal(name, description, points, target, bonus, amountCompleted));
             }
         }
-    }
-    public int GetScore()
-    {
-        return _score;
     }
 }

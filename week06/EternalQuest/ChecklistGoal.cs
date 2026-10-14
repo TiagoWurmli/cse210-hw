@@ -36,7 +36,7 @@ public class ChecklistGoal
     }
     public  override string GetDetailsString()
     {
-        string detailsString = "[ ] " + _shortName + " (" + _description + ")" + " -- Currently completed: " + _amountCompleted + "/" + _target;
+        string detailsString = _shortName + " (" + _description + ")" + " -- Currently completed: " + _amountCompleted + "/" + _target;
         return detailsString;
     }
 }

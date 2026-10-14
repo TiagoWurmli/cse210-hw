@@ -1,0 +1,4 @@
+650
+SimpleGoal:Simple Goal name;Simple Goal descrition;50;False
+EternalGoal:Eternal Goal name;Eternal Goal description;100
+ChecklistGoal:Checklist Goal name;Checklist Goal description;50;500;3;3

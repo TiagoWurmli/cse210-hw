@@ -14,7 +14,7 @@ public abstract class Goal
     public abstract bool  IsComplete();
     public  virtual string GetDetailsString()
     {
-        string detailsString = "[ ] " + _shortName + " (" + _description + ")";
+        string detailsString = _shortName + " (" + _description + ")";
         return detailsString;
     }
     public abstract string GetStringRepresentation();
