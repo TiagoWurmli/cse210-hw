@@ -94,13 +94,14 @@ public class GoalManager
             Console.WriteLine(index + ". " + goal.GetDetailsString());
             index++;
         }
+        int beforeScore = _score;
         Console.Write("Which goal did you accomplish? ");
         int choice = int.Parse(Console.ReadLine());
         if (choice >= 1 && choice <= _goals.Count)
         {
             _score += _goals[choice - 1].RecordEvent();
         }
-        Console.WriteLine("Congratulations! You have earned " + _goals[choice - 1].GetPoints() + " points!");
+        Console.WriteLine("Congratulations! You have earned " + (_score - beforeScore) + " points!");
         Console.WriteLine("You now have " + _score + " points.");
     }
     public void SaveGoals()

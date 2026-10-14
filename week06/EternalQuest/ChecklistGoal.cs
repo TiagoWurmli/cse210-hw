@@ -15,6 +15,7 @@ public class ChecklistGoal
     public override int RecordEvent()
     {
         _amountCompleted++;
+        
         if (IsComplete())
         {
             return _points + _bonus;
