@@ -7,9 +7,9 @@ public class EternalGoal
     {
 
     }
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
-
+        return _points;
     }
     public override bool IsComplete()
     {
@@ -17,6 +17,7 @@ public class EternalGoal
     }
     public override string GetStringRepresentation()
     {
-        return "";
+        string _StringRepresentation = "EternalGoal:" + _shortName + ";" + _description + ";" + _points;
+        return _StringRepresentation;
     }
 }
